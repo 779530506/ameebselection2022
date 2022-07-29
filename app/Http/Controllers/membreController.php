@@ -37,8 +37,8 @@ class membreController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'numeroCarte' => 'required',
-            'telephone' => 'required',
+            'numeroCarte' => 'required|unique:membres',
+            'telephone' => 'required|unique:membres',
             ]);
 
             $membre = new membre;
@@ -80,7 +80,10 @@ class membreController extends Controller
      */
     public function update(Request $request, $id)
     {
-
+        $request->validate([
+            'numeroCarte' => 'required|unique:membres',
+            'telephone' => 'required|unique:membres',
+            ]);
         $membre = membre::find($id);
         $membre->numeroCarte = $request->numeroCarte;
         $membre->telephone = $request->telephone;

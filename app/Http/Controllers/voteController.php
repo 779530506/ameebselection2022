@@ -16,6 +16,9 @@ class voteController extends Controller
     public function index()
     {
         $data['votes'] = vote::orderBy('id','desc')->paginate(5);
+        $data['countAmadou'] = vote::where('president', 'amadou')->count();
+        $data['countAlsane'] = vote::where('president', 'alsane')->count();
+
         return view('votes.index', $data);
     }
 
@@ -38,7 +41,8 @@ class voteController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'numeroCarte' => 'required|exists:membres,numeroCarte',
+            'numeroCarte' => 'unique:votes|required|exists:membres,numeroCarte',
+            'telephone' => 'required|exists:membres,telephone',
             'president' => 'required',
             ]);
 
@@ -46,6 +50,7 @@ class voteController extends Controller
             $membre = new membre;
             $vote->numeroCarte = $request->numeroCarte;
             $vote->president = $request->president;
+            $vote->telephone = $request->telephone;
             $membre_id= membre::where('numeroCarte',$request->numeroCarte)->first()->id;
             $vote->membre_id = $membre_id;
             $vote->save();
@@ -85,12 +90,14 @@ class voteController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'numeroCarte' => 'required|unique:votes',
+            'numeroCarte' => 'unique:votes|required|exists:membres,numeroCarte',
+            'telephone' => 'required|exists:membres,telephone',
             'president' => 'required',
             ]);
         $vote = vote::find($id);
         $vote->numeroCarte = $request->numeroCarte;
         $vote->president = $request->president;
+        $vote->telephone = $request->telephone;
         $vote->save();
         return redirect()->route('votes.index')
         ->with('success','Company Has Been updated successfully');

@@ -33,6 +33,13 @@
 <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
 @enderror
 </div>
+<div class="form-group">
+    <strong>Telephone:</strong>
+    <input type="text" name="telephone" class="form-control" placeholder="telephone">
+    @error('telephone')
+    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+    @enderror
+</div>
 </div>
 <div class="col-xs-12 col-sm-12 col-md-12">
 <div class="form-group">
@@ -43,6 +50,7 @@
       Amadou Ibrahima SARR
     </label>
   </div>
+
   <div class="form-check">
     <input class="form-check-input" type="radio" value="alsane" name="president" id="flexRadioDefault2" checked>
     <label class="form-check-label" for="flexRadioDefault2">

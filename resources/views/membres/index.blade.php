@@ -25,7 +25,7 @@
 <table class="table table-bordered">
 <tr>
 <th>id</th>
-<th>Numero Carte Etudiant</th>
+<th>Numero Carte Membre</th>
 <th>Telephone</th>
 
 </tr>
