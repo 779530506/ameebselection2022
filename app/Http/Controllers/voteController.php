@@ -15,7 +15,7 @@ class voteController extends Controller
      */
     public function index()
     {
-        $data['votes'] = vote::orderBy('id','desc')->paginate(5);
+        $data['votes'] = vote::orderBy('id','desc')->paginate(25);
         $data['countAmadou'] = vote::where('president', 'amadou')->count();
         $data['countAlsane'] = vote::where('president', 'alsane')->count();
 

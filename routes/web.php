@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CompanyCRUDController;
 use App\Http\Controllers\voteController;
 use App\Http\Controllers\membreController;
+use App\Http\Controllers\Controller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,7 +21,9 @@ Route::resource('companies', CompanyCRUDController::class);
 Route::resource('votes', voteController::class);
 Route::resource('membres', membreController::class);
 
+Route::resource('/', Controller::class);
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+// Route::get('/', function () {
+//     return view('layout');
+// });
