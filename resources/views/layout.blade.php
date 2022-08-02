@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <script src="js/bootstrap.bundle.min.js"></script>
     <!-- END Bootstrap -->
-
+     <!-- CSRF Token -->
+     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- additional  CSS  -->
     <link rel="stylesheet" href="css/style.css">
     <!-- END additional CSS -->
@@ -20,7 +21,6 @@
 </head>
 
 <body>
-
     <!--  Header -->
     <div class="container-fluid p-0">
         <img src="img/banner.jpg" style="width: 100%;">
@@ -208,13 +208,16 @@
                                     {{-- <th>id</th> --}}
                                     <th>Numero Carte membre</th>
                                     <th>President</th>
+                                    @if (Auth::user())
                                     <th>Actions</th>
+                                    @endif
                                 </tr>
                                 @foreach ($votes as $vote)
                                     <tr>
                                         {{-- <td>{{ $vote->id }}</td> --}}
                                         <td>{{ $vote->numeroCarte }}</td>
                                         <td>{{ $vote->president }}</td>
+                                        @if (Auth::user())
                                         <td>
                                             <form action="{{ route('votes.destroy', $vote->id) }}" method="Post">
                                                 {{-- <a class="btn btn-primary" href="{{ route('votes.edit',$vote->id) }}">Edit</a> --}}
@@ -224,6 +227,7 @@
                                                 <button type="submit" class="btn btn-danger">Delete</button>
                                             </form>
                                         </td>
+                                        @endif
                                     </tr>
                                 @endforeach
                             </table>
