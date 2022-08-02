@@ -95,7 +95,7 @@
                                     <p>{{ $message }}</p>
                                 </div>
                             @endif
-                                <form action="{{ route('votes.store') }}" method="POST" >
+                                <form action="{{ route('votes.store') }}" method="POST" autocomplete="off" >
                                     @csrf
                                     <div class="row">
                                         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -216,7 +216,7 @@
                                         <td>{{ $vote->numeroCarte }}</td>
                                         <td>{{ $vote->president }}</td>
                                         <td>
-                                            <form action="{{ route('votes.destroy', $vote->id) }}" method="Post">
+                                            <form action="{{ route('votes.destroy', $vote->id) }}" method="Post" autocomplete="off">
                                                 {{-- <a class="btn btn-primary" href="{{ route('votes.edit',$vote->id) }}">Edit</a> --}}
                                                 {{-- <a class="btn btn-primary" href="{{ route('votes.show', $vote->id) }}">Show</a> --}}
                                                 @csrf
