@@ -44,7 +44,6 @@ class membreController extends Controller
             $membre = new membre;
             $membre->numeroCarte = $request->numeroCarte;
             $membre->telephone = $request->telephone;
-            $membre->user_id = auth()->user()->id;
             $membre->save();
             return redirect()->route('membres.index')
             ->with('success','membre has been created successfully.');

@@ -12,12 +12,9 @@
 <div class="pull-left">
 <h2>Liste des membres</h2>
 </div>
-@if (Auth::user())
 <div class="pull-right mb-2">
-    <a class="btn btn-success" href="{{ route('membres.create') }}"> Create membre</a>
-    </div>
-@endif
-
+<a class="btn btn-success" href="{{ route('membres.create') }}"> Create membre</a>
+</div>
 </div>
 </div>
 @if ($message = Session::get('success'))
@@ -37,7 +34,6 @@
 <td>{{ $membre->id }}</td>
 <td>{{ $membre->numeroCarte }}</td>
 <td>{{ $membre->telephone }}</td>
-@if (Auth::user())
 <td>
 <form action="{{ route('membres.destroy',$membre->id) }}" method="Post">
 <a class="btn btn-primary" href="{{ route('membres.edit',$membre->id) }}">Edit</a>
@@ -47,7 +43,6 @@
 <button type="submit" class="btn btn-danger">Delete</button>
 </form>
 </td>
-@endif
 </tr>
 @endforeach
 </table>

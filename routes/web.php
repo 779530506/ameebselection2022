@@ -15,7 +15,6 @@ use App\Http\Controllers\Controller;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Auth::routes();
 
 Route::resource('companies', CompanyCRUDController::class);
 
@@ -28,7 +27,3 @@ Route::resource('/', Controller::class);
 // Route::get('/', function () {
 //     return view('layout');
 // });
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
