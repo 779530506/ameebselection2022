@@ -95,13 +95,18 @@
                                     <p>{{ $message }}</p>
                                 </div>
                             @endif
+                            @if ($message = Session::get('fail'))
+                                <div class="alert alert-danger">
+                                    <p>{{ $message }}</p>
+                                </div>
+                            @endif
                                 <form action="{{ route('votes.store') }}" method="POST" autocomplete="off" >
                                     @csrf
                                     <div class="row">
                                         <div class="col-xs-12 col-sm-12 col-md-12">
                                             <div class="form-group">
                                                 <strong>N* carte</strong>
-                                                <input type="text" name="numeroCarte" class="form-control"
+                                                <input type="int" name="numeroCarte" class="form-control"
                                                     placeholder="9945">
                                                 @error('numeroCarte')
                                                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
