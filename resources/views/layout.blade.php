@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <script src="js/bootstrap.bundle.min.js"></script>
     <!-- END Bootstrap -->
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- additional  CSS  -->
     <link rel="stylesheet" href="css/style.css">
     <!-- END additional CSS -->
