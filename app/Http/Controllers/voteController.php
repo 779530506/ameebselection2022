@@ -20,6 +20,7 @@ class voteController extends Controller
         $data['countAlsane'] = vote::where('president', 'alsane')->count();
 
         return view('votes.index', $data);
+        //return $data;
     }
 
     /**
@@ -60,7 +61,7 @@ class voteController extends Controller
                 return redirect()->route('votes.index')
                 ->with('success','vous avez voté avec succès');
             }else{
-                 return back()->with('fail','Erreur, le numéro carte et le numéro telephone ne correspond à uncun membre AMEEBS');
+                 return back()->with('fail','Erreur, le numéro carte et le numéro telephone ne correspond à aucun membre AMEEBS');
             }
 
     }
@@ -97,8 +98,8 @@ class voteController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'numeroCarte' => 'unique:votes|required|exists:membres,numeroCarte|max:9999|integer',
-            'telephone' => 'required|exists:membres,telephone|max:9',
+            'numeroCarte' => 'unique:votes|required|max:9999|integer',
+            'telephone' => 'required|max:9',
             'president' => 'required',
             ]);
         $vote = vote::find($id);

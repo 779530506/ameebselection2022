@@ -81,8 +81,8 @@ class membreController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'numeroCarte' => 'required|unique:membres|max:9999|integer',
-            'telephone' => 'required|unique:membres|max:9',
+            'numeroCarte' => 'required|max:9999|integer',
+            'telephone' => 'required|max:9',
             ]);
         $membre = membre::find($id);
         $membre->numeroCarte = $request->numeroCarte;
