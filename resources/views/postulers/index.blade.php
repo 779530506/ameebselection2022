@@ -178,8 +178,7 @@
                             <table class="table table-bordered table-striped">
                                 <tr>
                                     {{-- <th>id</th> --}}
-                                    <th>Nom</th>
-                                    <th>Prenom</th>
+                                    <th>Prenom Nom</th>
                                     <th>Telephone</th>
                                     <th>Poste</th>
                                     <th>Actions</th>
@@ -187,8 +186,7 @@
                                 @foreach ($postulers as $postuler)
                                     <tr>
                                         {{-- <td>{{ $postuler->id }}</td> --}}
-                                        <td>{{ $postuler->nom }}</td>
-                                        <td>{{ $postuler->prenom }}</td>
+                                        <td>{{ $postuler->prenom }} {{ $postuler->nom }}</td>
                                         <td>{{ $postuler->telephone }}</td>
                                         <td>{{ $postuler->poste }}</td>
                                         <td>

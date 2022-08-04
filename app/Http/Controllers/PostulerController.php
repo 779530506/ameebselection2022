@@ -48,7 +48,7 @@ class PostulerController extends Controller
             // $postuler->poste = $request->poste;
             //dd($postuler);
             postuler::create($request->all());
-            return redirect()->route('postulers.index')->with('success','vote enregistrer avec succés');
+            return redirect()->route('postulers.index')->with('success','vous avez postuler avec succés');
     }
 
     /**
