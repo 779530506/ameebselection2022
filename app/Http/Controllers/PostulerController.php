@@ -41,12 +41,9 @@ class PostulerController extends Controller
             'nom' => 'required|max:10',
             'poste' => 'required',
             'prenom' => 'required',
+            'telephone' => 'required',
             ]);
-            // $postuler = new postuler();
-            // $postuler->nom = $request->nom;
-            // $postuler->prenom = $request->prenom;
-            // $postuler->poste = $request->poste;
-            //dd($postuler);
+  
             postuler::create($request->all());
             return redirect()->route('postulers.index')->with('success','vous avez postuler avec succés');
     }
