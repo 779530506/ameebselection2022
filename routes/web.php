@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CompanyCRUDController;
 use App\Http\Controllers\voteController;
+use App\Http\Controllers\PostulerController;
 use App\Http\Controllers\membreController;
 use App\Http\Controllers\Controller;
 /*
@@ -19,6 +20,7 @@ use App\Http\Controllers\Controller;
 Route::resource('companies', CompanyCRUDController::class);
 
 Route::resource('votes', voteController::class);
+Route::resource('postulers', PostulerController::class);
 Route::resource('membres', membreController::class);
 
 Route::resource('/', Controller::class);

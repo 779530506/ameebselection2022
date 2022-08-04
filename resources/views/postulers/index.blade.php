@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -78,9 +79,9 @@
           </div></div> --}}
 
 
-                <div class="card border-primary  mb-2" style="max-width: 18rem;">
+                <div class="card border-primary  " style="max-width: 18rem;">
                     <div class="card-header bg-primary" style="color:white;">
-                        Voter Ici:
+                        postulerr Ici:
                         {{-- {{ $countAmadou + $countAlsane }} --}}
                     </div>
                     <div class="card-body text-primary">
@@ -100,101 +101,67 @@
                                     <p>{{ $message }}</p>
                                 </div>
                             @endif
-                                <form action="{{ route('votes.store') }}" method="POST" autocomplete="off" >
+                                <form action="{{ route('postulers.store') }}" method="POST" autocomplete="off" >
                                     @csrf
                                     <div class="row">
                                         <div class="col-xs-12 col-sm-12 col-md-12">
                                             <div class="form-group">
-                                                <strong>N* carte</strong>
-                                                <input type="int" name="numeroCarte" class="form-control"
-                                                    placeholder="9945">
-                                                @error('numeroCarte')
+                                                <strong>Nom</strong>
+                                                <input type="int" name="nom" class="form-control"
+                                                    placeholder="nom">
+                                                @error('nom')
+                                                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                            <div class="form-group">
+                                                <strong>Prenom</strong>
+                                                <input type="text" name="prenom" class="form-control"
+                                                    placeholder="prenom">
+                                                @error('prenom')
                                                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                                                 @enderror
                                             </div>
                                             <div class="form-group">
                                                 <strong>Tel:</strong>
                                                 <input type="text" name="telephone" class="form-control"
-                                                    placeholder="779530506">
+                                                    placeholder="779650506">
                                                 @error('telephone')
                                                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                                                 @enderror
                                             </div>
-                                        </div>
-                                        <div class="col-xs-12 col-sm-12 col-md-12">
-                                            <div class="form-group"><br>
-                                                {{-- <strong>Votre choix:</strong><br> --}}
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="president"
-                                                        value="amadou" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
-                                                        Amadou I SARR
-                                                    </label>
-                                                </div>
-                                                <br>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" value="alsane"
-                                                        name="president" id="flexRadioDefault2" checked>
-                                                    <label class="form-check-label" for="flexRadioDefault2">
-                                                        Alsane SARR
-                                                    </label><br>
-                                                </div>
-                                                @error('president')
-                                                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                                                @enderror
+                                            <div class="form-group">
+                                                <strong>Poste</strong>
+                                                {{-- <label for="pet-select">Choose a pet:</label> --}}
+
+                                                <select name="poste" class="form-control">
+                                                    <option value="membre">Postuler</option>
+                                                    <option value="Vice President">Vice Président</option>
+                                                    <option value="Trésorier">Trésorier</option>
+                                                    <option value="Secretaire">Secrétaire</option>
+                                                    <option value="Organisation">Commission d'organisation</option>
+                                                    <option value="Pedagogique">Commission Pédagogique</option>
+                                                    <option value="Commission Féminine">Commission Féminine </option>
+                                                    <option value="Commission Sociale">Commission Sociale</option>
+                                                    <option value="Commission Compte">Commission au compte</option>
+                                                    <option value="Conseil d'administration">Conseil d'administration</option>
+                                                    <option value="Relation Extérieure">Relation Extérieur</option>
+                                                </select>
                                             </div>
                                         </div>
+
                                         <h4> </h4>
-                                        <button type="submit" class="btn btn-primary ml-3">Je vote</button>
+                                        <button type="submit" class="btn btn-primary ml-3">Je postule</button>
                                     </div>
                                 </form>
 
-                                {{-- <form>
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Your Email *" value="" />
-                </div>
-                <br />
-                <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Your Password *" value="" />
-                </div>
-                <br />
-                <div class="form-group" style="width:200px;">
-                    <input type="submit" class="btnSubmit" value="Login" />
-                </div>
-                <br />
-                <div class="form-group">
-                    <a href="#" class="ForgetPwd">Forget Password?</a>
-                </div>
-            </form> --}}
-
                             </div>
                         </div>
-
-
-
-                        <!-- End Login Form -->
-
-
-
-
-
                     </div>
                 </div>
             </div>
             <!-- End Sidenav-->
             <!-- BODY avec 8 colonnes-->
             <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header bg-primary" style="color:white; font-size: 18px; font-weight:bold;">
-                        Resultats: Nombre de votants {{ $countAmadou + $countAlsane }}
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">
-                            Amadou I Sarr : <strong>{{ $countAmadou }}</strong> voix <br><br>
-                            Alsane Sarr : <strong>{{ $countAlsane }}</strong> voix
-                        </p>
-                    </div>
-                </div>
                 <div class="card">
                     <div class="card-header bg-primary" style="color:white; font-size: 18px; font-weight:bold;">
                         Liste des votants
@@ -211,19 +178,23 @@
                             <table class="table table-bordered table-striped">
                                 <tr>
                                     {{-- <th>id</th> --}}
-                                    <th>Numero Carte membre</th>
-                                    <th>President</th>
+                                    <th>Nom</th>
+                                    <th>Prenom</th>
+                                    <th>Telephone</th>
+                                    <th>Poste</th>
                                     <th>Actions</th>
                                 </tr>
-                                @foreach ($votes as $vote)
+                                @foreach ($postulers as $postuler)
                                     <tr>
-                                        {{-- <td>{{ $vote->id }}</td> --}}
-                                        <td>{{ $vote->numeroCarte }}</td>
-                                        <td>{{ $vote->president }}</td>
+                                        {{-- <td>{{ $postuler->id }}</td> --}}
+                                        <td>{{ $postuler->nom }}</td>
+                                        <td>{{ $postuler->prenom }}</td>
+                                        <td>{{ $postuler->telephone }}</td>
+                                        <td>{{ $postuler->poste }}</td>
                                         <td>
-                                            <form action="{{ route('votes.destroy', $vote->id) }}" method="Post" autocomplete="off">
-                                                {{-- <a class="btn btn-primary" href="{{ route('votes.edit',$vote->id) }}">Edit</a> --}}
-                                                {{-- <a class="btn btn-primary" href="{{ route('votes.show', $vote->id) }}">Show</a> --}}
+                                            <form action="{{ route('postulers.destroy', $postuler->id) }}" method="Post" autocomplete="off">
+                                                {{-- <a class="btn btn-primary" href="{{ route('postulers.edit',$postuler->id) }}">Edit</a> --}}
+                                                {{-- <a class="btn btn-primary" href="{{ route('postulers.show', $postuler->id) }}">Show</a> --}}
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger">Delete</button>
