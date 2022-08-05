@@ -39,9 +39,14 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="{{ route('votes.index') }}">Home</a>
                     </li>
-
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('votes.index') }}">Voter</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('postulers.index') }}">Postuler</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">AMEEBS INFO</a>
                     </li>
@@ -137,6 +142,13 @@
                                                         name="president" id="flexRadioDefault2" checked>
                                                     <label class="form-check-label" for="flexRadioDefault2">
                                                         Alsane SARR
+                                                    </label><br><br>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" value="null"
+                                                        name="president" id="flexRadioDefault2" checked>
+                                                    <label class="form-check-label" for="flexRadioDefault2">
+                                                        Bulletin Null
                                                     </label><br>
                                                 </div>
                                                 @error('president')
@@ -149,35 +161,8 @@
                                     </div>
                                 </form>
 
-                                {{-- <form>
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Your Email *" value="" />
-                </div>
-                <br />
-                <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Your Password *" value="" />
-                </div>
-                <br />
-                <div class="form-group" style="width:200px;">
-                    <input type="submit" class="btnSubmit" value="Login" />
-                </div>
-                <br />
-                <div class="form-group">
-                    <a href="#" class="ForgetPwd">Forget Password?</a>
-                </div>
-            </form> --}}
-
                             </div>
                         </div>
-
-
-
-                        <!-- End Login Form -->
-
-
-
-
-
                     </div>
                 </div>
             </div>
@@ -186,12 +171,13 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header bg-primary" style="color:white; font-size: 18px; font-weight:bold;">
-                        Resultats: Nombre de votants {{ $countAmadou + $countAlsane }}
+                        Resultats: Nombre de votants {{ $total}}
                     </div>
                     <div class="card-body">
                         <p class="card-text">
-                            Amadou I Sarr : <strong>{{ $countAmadou }}</strong> voix <br><br>
-                            Alsane Sarr : <strong>{{ $countAlsane }}</strong> voix
+                            Amadou I Sarr : <strong style="color:red; ">  {{ $countAmadou }}</strong> voix ......soit ...... <span style="color:green; font-size:1.3em ">{{round($countAmadou  * 100 / $total,2)}} % </span><br><br>
+                            Alsane Sarr : <strong style="color:red; ">{{ $countAlsane }}</strong> voix ......soit ..... <span style="color:green; font-size:1.3em ">{{round($countAlsane  * 100 / $total,2)}} %</span><br><br>
+                            Bulletin Null : <strong style="color:red;"> {{ $null }}</strong> voix .....soit ....... <span style="color:green; font-size:1.3em "> {{round($null  * 100 / $total,2)}} %</span>
                         </p>
                     </div>
                 </div>
@@ -256,8 +242,8 @@
 
                     <!-- Copyright -->
                     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-                        © 2020 Copyright:
-                        <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+                        © 2022 Copyright:
+                        <a class="text-white" href="https://mdbootstrap.com/">AMEEBS</a>
                     </div>
                     <!-- Copyright -->
                 </footer>

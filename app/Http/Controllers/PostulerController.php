@@ -43,9 +43,9 @@ class PostulerController extends Controller
             'prenom' => 'required',
             'telephone' => 'required',
             ]);
-  
+
             postuler::create($request->all());
-            return redirect()->route('postulers.index')->with('success','vous avez postuler avec succés');
+            return redirect()->route('postulers.index')->with('success','vous avez postulé avec succés');
     }
 
     /**

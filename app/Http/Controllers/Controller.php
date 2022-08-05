@@ -16,6 +16,9 @@ class Controller extends BaseController
         $data['votes'] = vote::orderBy('id','desc')->paginate(25);
         $data['countAmadou'] = vote::where('president', 'amadou')->count();
         $data['countAlsane'] = vote::where('president', 'alsane')->count();
+        $data['null'] = vote::where('president', 'null')->count();
+        $data['total'] = $data['countAmadou']+$data['countAlsane']+$data['null'];
+
 
         return view('layout', $data);
     }

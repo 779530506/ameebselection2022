@@ -40,9 +40,14 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="{{ route('votes.index') }}">Home</a>
                     </li>
-
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('votes.index') }}">Voter</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('postulers.index') }}">Postuler</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">AMEEBS INFO</a>
                     </li>
@@ -124,7 +129,7 @@
                                             <div class="form-group">
                                                 <strong>Tel:</strong>
                                                 <input type="text" name="telephone" class="form-control"
-                                                    placeholder="779650506">
+                                                    placeholder="">
                                                 @error('telephone')
                                                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                                                 @enderror
@@ -137,13 +142,17 @@
                                                     <option value="membre">Postuler</option>
                                                     <option value="Vice President">Vice Président</option>
                                                     <option value="Trésorier">Trésorier</option>
+                                                    <option value="Trésorier">Adjoint Trésorier</option>
                                                     <option value="Secretaire">Secrétaire</option>
-                                                    <option value="Organisation">Commission d'organisation</option>
-                                                    <option value="Pedagogique">Commission Pédagogique</option>
+                                                    <option value="Secretaire">Adjoint Secrétaire</option>
+                                                    <option value="Commission D'Organisation">Commission D'organisation</option>
+                                                    <option value="Commission S">Commission Sportive</option>
+                                                    <option value="Commission D'Organisation">Commission Culturelle</option>
+                                                    <option value="Commission Pedagogique">Commission Pédagogique</option>
                                                     <option value="Commission Féminine">Commission Féminine </option>
                                                     <option value="Commission Sociale">Commission Sociale</option>
                                                     <option value="Commission Compte">Commission au compte</option>
-                                                    <option value="Conseil d'administration">Conseil d'administration</option>
+                                                    <option value="Conseil d'administration">Conseil D'administration</option>
                                                     <option value="Relation Extérieure">Relation Extérieur</option>
                                                 </select>
                                             </div>
@@ -164,7 +173,7 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header bg-primary" style="color:white; font-size: 18px; font-weight:bold;">
-                        Liste des votants
+                        Liste des postulants
                     </div>
                     <div class="card-body">
                         <p class="card-text">
