@@ -142,16 +142,16 @@
                                                     <option value="membre">Postuler</option>
                                                     <option value="Vice President">Vice Président</option>
                                                     <option value="Trésorier">Trésorier</option>
-                                                    <option value="Trésorier">Adjoint Trésorier</option>
+                                                    <option value="Adjoint Trésorier">Adjoint Trésorier</option>
                                                     <option value="Secretaire">Secrétaire</option>
-                                                    <option value="Secretaire">Adjoint Secrétaire</option>
+                                                    <option value="Adjoint Secretaire">Adjoint Secrétaire</option>
                                                     <option value="Commission D'Organisation">Commission D'organisation</option>
-                                                    <option value="Commission S">Commission Sportive</option>
-                                                    <option value="Commission D'Organisation">Commission Culturelle</option>
+                                                    <option value="Commission Sportive">Commission Sportive</option>
+                                                    <option value="Commission Culturelle">Commission Culturelle</option>
                                                     <option value="Commission Pedagogique">Commission Pédagogique</option>
                                                     <option value="Commission Féminine">Commission Féminine </option>
                                                     <option value="Commission Sociale">Commission Sociale</option>
-                                                    <option value="Commission Compte">Commission au compte</option>
+                                                    <option value="Commission au Compte">Commission au compte</option>
                                                     <option value="Conseil d'administration">Conseil D'administration</option>
                                                     <option value="Relation Extérieure">Relation Extérieur</option>
                                                 </select>
@@ -204,7 +204,7 @@
                                                 {{-- <a class="btn btn-primary" href="{{ route('postulers.show', $postuler->id) }}">Show</a> --}}
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-danger">Delete</button>
+                                                <button type="submit" class="btn btn-danger">Supprimer</button>
                                             </form>
                                         </td>
                                     </tr>

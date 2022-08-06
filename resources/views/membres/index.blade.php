@@ -40,7 +40,7 @@
 <a class="btn btn-primary" href="{{ route('membres.show',$membre->id) }}">Show</a>
 @csrf
 @method('DELETE')
-<button type="submit" class="btn btn-danger">Delete</button>
+<button type="submit" class="btn btn-danger">Supprimer</button>
 </form>
 </td>
 </tr>
