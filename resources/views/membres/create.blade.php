@@ -22,6 +22,11 @@
 {{ session('status') }}
 </div>
 @endif
+@if ($message = Session::get('success'))
+<div class="alert alert-success">
+<p>{{ $message }}</p>
+</div>
+@endif
 <form action="{{ route('membres.store') }}" method="POST" enctype="multipart/form-data">
 @csrf
 <div class="row">
