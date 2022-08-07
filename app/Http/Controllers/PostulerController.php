@@ -14,7 +14,7 @@ class PostulerController extends Controller
      */
     public function index()
     {
-        $data['postulers'] = postuler::orderBy('id','desc')->paginate(25);
+        $data['postulers'] = postuler::orderBy('id','desc')->paginate(50);
         return view('postulers.index', $data);
         //return $data;
     }

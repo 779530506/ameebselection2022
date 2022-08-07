@@ -14,7 +14,7 @@ class membreController extends Controller
      */
     public function index()
     {
-        $data['membres'] = membre::orderBy('id','desc')->paginate(5);
+        $data['membres'] = membre::orderBy('id','desc')->paginate(50);
         return view('membres.index', $data);
     }
 
