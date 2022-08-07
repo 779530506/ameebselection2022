@@ -45,7 +45,7 @@ class membreController extends Controller
             $membre->numeroCarte = $request->numeroCarte;
             $membre->telephone = $request->telephone;
             $membre->save();
-            return redirect()->route('membres.index')
+            return redirect()->route('membres.create')
             ->with('success','membre has been created successfully.');
     }
 
