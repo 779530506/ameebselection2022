@@ -175,9 +175,24 @@
                     </div>
                     <div class="card-body">
                         <p class="card-text">
-                            Amadou I Sarr : <strong style="color:red; ">  {{ $countAmadou }}</strong> voix ......soit <span style="color:green; font-size:1.3em ">{{round($countAmadou  * 100 / $total,2)}} % </span><br><br>
-                            Alsane Sarr : <strong style="color:red; ">{{ $countAlsane }}</strong> voix ......soit <span style="color:green; font-size:1.3em ">{{round($countAlsane  * 100 / $total,2)}} %</span><br><br>
-                            Bulletin Null : <strong style="color:red;"> {{ $null }}</strong> voix .....soit <span style="color:green; font-size:1.3em "> {{round($null  * 100 / $total,2)}} %</span>
+                            Amadou I Sarr : <strong style="color:red; ">  {{ $countAmadou }}</strong> voix ......soit <span style="color:green; font-size:1.3em ">
+                            @if ($total >0)
+                              {{round($countAmadou  * 100 / $total,2)}} %
+                            @else 0 %
+                            @endif
+                            </span><br><br>
+                            Alsane Sarr : <strong style="color:red; ">{{ $countAlsane }}</strong> voix ......soit <span style="color:green; font-size:1.3em ">
+                                @if ($total >0)
+                                {{round($countAlsane  * 100 / $total,2)}} %
+                              @else 0 %
+                              @endif
+                            </span><br><br>
+                            Bulletin Null : <strong style="color:red;"> {{ $null }}</strong> voix .....soit <span style="color:green; font-size:1.3em ">
+                             @if ($total >0)
+                             {{round($null  * 100 / $total,2)}} %
+                              @else 0 %
+                            @endif
+                                </span>
                         </p>
                     </div>
                 </div>
