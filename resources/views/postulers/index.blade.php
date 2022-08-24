@@ -202,9 +202,9 @@
                                             <form action="{{ route('postulers.destroy', $postuler->id) }}" method="Post" autocomplete="off">
                                                 {{-- <a class="btn btn-primary" href="{{ route('postulers.edit',$postuler->id) }}">Edit</a> --}}
                                                 {{-- <a class="btn btn-primary" href="{{ route('postulers.show', $postuler->id) }}">Show</a> --}}
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-danger">Supprimer</button>
+                                                {{-- @csrf --}}
+                                                {{-- @method('DELETE') --}}
+                                                {{-- <button type="submit" class="btn btn-danger">Supprimer</button> --}}
                                             </form>
                                         </td>
                                     </tr>
