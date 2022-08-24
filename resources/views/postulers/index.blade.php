@@ -190,7 +190,7 @@
                                     <th>Prenom Nom</th>
                                     <th>Telephone</th>
                                     <th>Poste</th>
-                                    <th>Actions</th>
+                                    {{-- <th>Actions</th> --}}
                                 </tr>
                                 @foreach ($postulers as $postuler)
                                     <tr>
