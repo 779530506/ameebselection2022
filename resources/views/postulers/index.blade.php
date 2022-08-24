@@ -204,7 +204,7 @@
                                                 {{-- <a class="btn btn-primary" href="{{ route('postulers.show', $postuler->id) }}">Show</a> --}}
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-danger">Supprimer</button>
+                                                {{-- <button type="submit" class="btn btn-danger">Supprimer</button> --}}
                                             </form>
                                         </td>
                                     </tr>
