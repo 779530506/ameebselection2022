@@ -152,8 +152,8 @@
                                                     <option value="Commission Féminine">Commission Féminine </option>
                                                     <option value="Commission Sociale">Commission Sociale</option>
                                                     <option value="Commission au Compte">Commission au compte</option>
-                                                    <option value="Conseil d'administration">Conseil D'administration</option>
-                                                    <option value="Relation Extérieure">Relation Extérieur</option>
+                                                    <option value="Conseil d'administration">Comité de Sage</option>
+                                                    <option value="Relation Extérieure">Relation Extérieure</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -204,7 +204,7 @@
                                                 {{-- <a class="btn btn-primary" href="{{ route('postulers.show', $postuler->id) }}">Show</a> --}}
                                                 @csrf
                                                 @method('DELETE')
-                                                {{-- <button type="submit" class="btn btn-danger">Supprimer</button> --}}
+                                                <button type="submit" class="btn btn-danger">Supprimer</button>
                                             </form>
                                         </td>
                                     </tr>
