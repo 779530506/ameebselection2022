@@ -45,14 +45,14 @@ class voteController extends Controller
      */
     public function store(Request $request)
     {
-        $startDate = Carbon::createFromFormat('d/m/Y H:i:s', '03/09/2022 15:49:00');
-        $endDate = Carbon::createFromFormat('d/m/Y H:i:s', '03/09/2022 15:59:00');
+        $startDate = Carbon::createFromFormat('d/m/Y H:i:s', '18/09/2022 12:00:00');
+        $endDate = Carbon::createFromFormat('d/m/Y H:i:s', '03/09/2022 13:00:00');
 
         $check = Carbon::now()->between($startDate, $endDate);
 
-        if(!$check){
-            return back()->with('fail','Erreur, vote non ouvert ou fermé');
-        }
+        // if(!$check){
+        //     return back()->with('fail','Erreur, vote non ouvert ou fermé');
+        // }
         $request->validate([
             'numeroCarte' => 'unique:votes|required|exists:membres,numeroCarte|max:9999|integer',
             'telephone' => 'required|exists:membres,telephone|max:9',
