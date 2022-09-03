@@ -22,6 +22,10 @@ class voteController extends Controller
         $data['null'] = vote::where('president', 'null')->count();
         $data['total'] = $data['countAmadou']+$data['countAlsane']+$data['null'];
 
+        $startDate = Carbon::createFromFormat('d/m/Y H:i:s', '18/09/2022 12:00:00');
+        $endDate = Carbon::createFromFormat('d/m/Y H:i:s', '18/09/2022 13:00:00');
+        $check = Carbon::now()->between($startDate, $endDate);
+        $data['isTime']= !$check;
 
         return view('votes.index', $data);
         //return $data;
@@ -46,7 +50,7 @@ class voteController extends Controller
     public function store(Request $request)
     {
         $startDate = Carbon::createFromFormat('d/m/Y H:i:s', '18/09/2022 12:00:00');
-        $endDate = Carbon::createFromFormat('d/m/Y H:i:s', '03/09/2022 13:00:00');
+        $endDate = Carbon::createFromFormat('d/m/Y H:i:s', '18/09/2022 13:00:00');
 
         $check = Carbon::now()->between($startDate, $endDate);
 

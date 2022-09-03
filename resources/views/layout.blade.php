@@ -120,7 +120,7 @@
                                             <div class="form-group">
                                                 <strong>Tel:</strong>
                                                 <input type="text" name="telephone" class="form-control"
-                                                    placeholder="779530506">
+                                                    placeholder="77956506">
                                                 @error('telephone')
                                                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                                                 @enderror
@@ -168,7 +168,9 @@
             </div>
             <!-- End Sidenav-->
             <!-- BODY avec 8 colonnes-->
+            @if ($isTime==true)
             <div class="col-md-8">
+
                 <div class="card">
                     <div class="card-header bg-primary" style="color:white; font-size: 18px; font-weight:bold;">
                         Resultats: Nombre de votants {{ $total}}
@@ -196,6 +198,7 @@
                         </p>
                     </div>
                 </div>
+
                 <div class="card">
                     <div class="card-header bg-primary" style="color:white; font-size: 18px; font-weight:bold;">
                         Liste des votants
@@ -241,6 +244,19 @@
 
                 </div>
             </div>
+            @else
+            <div class="col-md-8">
+
+                <div class="card">
+                    <div class="card-header bg-primary" style="color:white; font-size: 18px; font-weight:bold;">
+                        Resultats non disponibles
+                    </div>
+                    <div class="card-body"><br><br>
+                        <H5>Veuillez patienter jusqu'à 13h:00mn</H5>
+                    </div>
+                </div>
+            </div>
+            @endif
         </div>
         <br />
         <!-- End Body-->
