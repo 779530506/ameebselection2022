@@ -198,15 +198,15 @@
                                         <td>{{ $postuler->prenom }} {{ $postuler->nom }}</td>
                                         <td>{{ $postuler->telephone }}</td>
                                         <td>{{ $postuler->poste }}</td>
-                                        <td>
-                                            <form action="{{ route('postulers.destroy', $postuler->id) }}" method="Post" autocomplete="off">
+                                        {{-- <td> --}}
+                                            {{-- <form action="{{ route('postulers.destroy', $postuler->id) }}" method="Post" autocomplete="off"> --}}
                                                 {{-- <a class="btn btn-primary" href="{{ route('postulers.edit',$postuler->id) }}">Edit</a> --}}
                                                 {{-- <a class="btn btn-primary" href="{{ route('postulers.show', $postuler->id) }}">Show</a> --}}
                                                 {{-- @csrf --}}
                                                 {{-- @method('DELETE') --}}
                                                 {{-- <button type="submit" class="btn btn-danger">Supprimer</button> --}}
-                                            </form>
-                                        </td>
+                                            {{-- </form> --}}
+                                        {{-- </td> --}}
                                     </tr>
                                 @endforeach
                             </table>
