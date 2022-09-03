@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('postulers', function (Blueprint $table) {
             $table->id();
-            $table->string('nom', 10);
-            $table->string('prenom', 10);
+            $table->string('nom', 50);
+            $table->string('prenom', 100);
             $table->string('poste');
             $table->string('telephone');
             $table->timestamps();
